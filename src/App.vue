@@ -1,28 +1,97 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper">
+    <div class="item item-big">
+      <tag-list
+        :tags="tags"
+      />
+    </div>
+    <div class="item item-medium">
+      <tag-list
+        :tags="tags"
+        align="left"
+      />
+    </div>
+    <div class="item item-small">
+      <tag-list
+        :tags="tags"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TagList from './components/TagList.vue';
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
-}
+    TagList
+  },
+
+  data: () => ({
+    tags: [
+      {
+        value: 'На автобусе',
+        icon: 'mdi-bus'
+      },
+      {
+        value: 'На автобусе',
+        icon: 'mdi-bus'
+      },
+      {
+        value: 'На автобусе',
+        icon: 'mdi-bus'
+      },
+      {
+        value: 'На автобусе',
+        icon: 'mdi-bus'
+      },
+      {
+        value: 'На автобусе',
+        icon: 'mdi-bus'
+      },
+      {
+        value: '29 марта'
+      },
+      {
+        value: '5',
+        icon: 'mdi-star-outline'
+      },
+      {
+        value: '6 часов',
+        icon: 'mdi-clock'
+      },
+    ]
+  }),
+};
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .item {
+    height: 60px;
+    background: #ccc;
+
+    &-big {
+      width: 80vw;
+    }
+    &-medium {
+      width: 50vw;
+    }
+    &-small {
+      width: 20vw;
+    }
+  }
 </style>
